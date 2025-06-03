@@ -59,3 +59,7 @@ exclude_lines = [
   "if __name__ == .__main__.:",
   "if TYPE_CHECKING:",
 ]
+
+[tool.hatch.envs.default.dependencies]
+pytest = "^8.0.0"
+ruff = "^0.4.0"
