@@ -24,7 +24,9 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = [
+    "numpy>=1.24.4",
+]
 
 [project.urls]
 Documentation = "https://github.com/jModeler/eval_nonlinear_model_r2/#readme"
