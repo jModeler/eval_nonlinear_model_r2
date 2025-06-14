@@ -24,4 +24,3 @@ class LogLogisticModel(BaseKernel):
             raise ValueError(
                 "Invalid model. Please provide either 'L3', 'L4' or 'L5'."
             )
-
