@@ -11,7 +11,7 @@ class LogLogisticModel(BaseKernel):
         self.kernel(b, e, x, kernel_flag="loglinear") # this will create self.log_linear
         # compute the fraction 1/(1 + exp(b*log(x)-e)), since this is common to all model types in this class
         # we're using expit method from scipy to deal with extreme values in the self.log_linear array
-        self.sigmoid = expit(self.log_linear)
+        self.sigmoid = expit(-self.log_linear)
         # now calculate the model predictions
         if model == "L3":
             self.predictions = d * self.sigmoid 
