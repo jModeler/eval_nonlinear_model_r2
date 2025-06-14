@@ -14,7 +14,7 @@ def sample_data():
 def test_model_W3(sample_data):
     b, d, e, x = sample_data
     model = WeibullModel("test_W3")
-    model.model(b=b, d=d, e=e, x=x, model="W3")
+    model.model(b=b, d=d, e=e, x=x, model_flag="W3")
     assert hasattr(model, "predictions")
     np.testing.assert_allclose(model.predictions, d * model.exponent)
 
@@ -22,12 +22,12 @@ def test_model_W4(sample_data):
     b, d, e, x = sample_data
     c = 0.5
     model = WeibullModel("test_W4")
-    model.model(b=b, d=d, e=e, x=x, model="W4", c=c)
+    model.model(b=b, d=d, e=e, x=x, model_flag="W4", c=c)
     expected = c + (d - c) * model.exponent
     np.testing.assert_allclose(model.predictions, expected)
 
 def test_invalid_model_name(sample_data):
     b, d, e, x = sample_data
     model = WeibullModel("test_invalid")
-    with pytest.raises(ValueError, match="Invalid model. Please provide either 'W3' or 'W5'."):
-        model.model(b=b, d=d, e=e, x=x, model="invalid_model")
+    with pytest.raises(ValueError, match="Invalid model_flag. Please provide either 'W3' or 'W5'."):
+        model.model(b=b, d=d, e=e, x=x, model_flag="invalid_model")
