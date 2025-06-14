@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.special import expit
-from base import BaseKernel
+from eval_r2.models.base import BaseKernel
 
 
 class LogLogisticModel(BaseKernel):
