@@ -2,7 +2,6 @@ import numpy as np
 from scipy.special import expit
 from eval_r2.models.base import BaseKernel
 
-
 class LogLogisticModel(BaseKernel):
     def __init__(self, name: str):
         super().__init__(name)
