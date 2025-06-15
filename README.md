@@ -108,6 +108,7 @@ Noise SD = 0.400
 ```
 
 Note how AIC, AICc, BIC fit criteria correctly identify L3 as the best model for the generated data (across all error values), whereas R<sup>2</sup> and R<sup>2</sup><sub>adj.</sub> tend to recommend other models. 
+
 ---
 
 ## Structure
