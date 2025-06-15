@@ -19,7 +19,7 @@ logger = logging.getLogger("ModelFittingLogger")
 def simulate_data():
     """Simulate data using LogLogistic L3 model with fixed seed for reproducibility."""
     np.random.seed(42)
-    x = np.linspace(1, 10, 100)
+    x = np.linspace(1, 20, 1000)
     true_params = {"b": 1.5, "d": 2.0, "e": 5.0}
     simulator = ModelSimulator(LogLogisticModel("L3_sim"), x)
     simulator.simulate(params=true_params, model_flag="L3")

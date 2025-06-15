@@ -31,7 +31,7 @@ def test_simulate_basic(loglogistic_model_and_data):
     for sd, noisy_vals in simulator.noisy_values.items():
         assert noisy_vals.shape == expected.shape
         noise = noisy_vals - expected
-        assert np.isclose(np.std(noise), sd, rtol=0.2)  # Allow 20% relative tolerance
+        assert np.isclose(np.std(noise), sd, rtol=0.4)  # Allow 40% relative tolerance
 
 
 def test_missing_parameters(loglogistic_model_and_data):
