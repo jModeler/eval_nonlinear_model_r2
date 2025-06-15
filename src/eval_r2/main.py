@@ -89,13 +89,14 @@ def print_best_models_per_criterion(results):
 
             best_value = valid_fits[best_model][criterion]
             print(f"  {criterion}: {best_model} ({best_value:.4f})")
-            
+
 
 def main():
     x, simulator = simulate_data()
     model_variants = get_model_variants()
     results = fit_models(x, simulator.noisy_values, model_variants)
     pprint.pprint(results)
+    print_best_models_per_criterion(results)
 
 
 if __name__ == "__main__":
