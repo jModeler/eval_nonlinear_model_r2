@@ -57,7 +57,7 @@ def fit_models(x, noisy_data, model_variants):
             fitter = ModelFitter(model_instance)
 
             try:
-                fitted = fitter.fit(x=x, y=y_noisy, initial_params=init_params)
+                fitter.fit(x=x, y=y_noisy, initial_params=init_params)
                 metrics = ManualModelFitEvaluator(y_true=y_noisy, y_pred=model_instance.predictions, num_params=len(init_params))
                 results[sd][flag] = metrics.get_stats()
                 logger.info(f"Fit successful: Model={flag}, Noise SD={sd:.2f}")
