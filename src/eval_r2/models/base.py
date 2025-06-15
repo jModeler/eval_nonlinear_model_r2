@@ -4,6 +4,9 @@ import numpy as np
 class BaseKernel:
     def __init__(self, name: str):
         self.name = name
+        self.linear = None
+        self.log_linear = None
+        self.log_linear_2 = None
 
     def kernel(self, b: float, e: float, x: np.array, kernel_flag: str = "linear"):
         if kernel_flag == "linear":

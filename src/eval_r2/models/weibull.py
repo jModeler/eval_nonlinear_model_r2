@@ -4,6 +4,8 @@ from eval_r2.models.base import BaseKernel
 class WeibullModel(BaseKernel):
     def __init__(self, name: str):
         super().__init__(name)
+        self.exponent = None 
+        self.predictions = None
 
     def model(self, b: float, d: float, e: float, x: np.array, model_flag: str = "W3", c: float = 1.0):
         # compute the appropriate kernel
