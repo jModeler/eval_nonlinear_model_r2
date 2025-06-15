@@ -5,6 +5,8 @@ from eval_r2.models.base import BaseKernel
 class LogLogisticModel(BaseKernel):
     def __init__(self, name: str):
         super().__init__(name)
+        self.sigmoid = None 
+        self.predictions = None
 
     def model(self, b: float, d: float, e: float, x: np.array, model_flag: str = "L3", f: float = 1.0, c: float = 1.0):
         # compute the appropriate kernel

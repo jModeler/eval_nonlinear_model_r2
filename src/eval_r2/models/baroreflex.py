@@ -5,6 +5,13 @@ from eval_r2.models.base import BaseKernel
 class BaroreflexModel(BaseKernel):
     def __init__(self, name: str):
         super().__init__(name)
+        self.k1 = None 
+        self.k2 = None 
+        self.exponent_1 = None 
+        self.exponent_2 = None 
+        self.f = None 
+        self.denominator = None 
+        self.predictions = None
     
     def model(self, b1: float, b2: float, c: float,  d: float, e: float, x: np.array):
         # compute the appropriate kernel
