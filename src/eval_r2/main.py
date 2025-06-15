@@ -67,6 +67,29 @@ def fit_models(x, noisy_data, model_variants):
 
     return results
 
+def print_best_models_per_criterion(results):
+    criteria = ["aic_c", "rsq_adj", "bic", "rsq", "residual_variance"]
+
+    print("\nBest models per criterion for each noise level:")
+    for sd, fits in results.items():
+        print(f"\nNoise SD = {sd:.3f}")
+        for criterion in criteria:
+            # Filter out any models with errors or missing criterion
+            valid_fits = {m: stats for m, stats in fits.items() if criterion in stats and "error" not in stats}
+            if not valid_fits:
+                print(f"  {criterion}: No valid fits")
+                continue
+
+            if criterion in ["aic_c", "bic", "residual_variance"]:
+                # Lower is better
+                best_model = min(valid_fits, key=lambda m: valid_fits[m][criterion])
+            else:
+                # Higher is better
+                best_model = max(valid_fits, key=lambda m: valid_fits[m][criterion])
+
+            best_value = valid_fits[best_model][criterion]
+            print(f"  {criterion}: {best_model} ({best_value:.4f})")
+            
 
 def main():
     x, simulator = simulate_data()
