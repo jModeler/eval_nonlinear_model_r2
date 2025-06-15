@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from eval_r2.metrics.metrics import ManualModelFitEvaluator 
+from eval_r2.metrics.metrics import ManualModelFitEvaluator
 
 
 @pytest.fixture
@@ -15,8 +15,16 @@ def test_attribute_existence(simple_data):
     y_true, y_pred, k = simple_data
     evaluator = ManualModelFitEvaluator(y_true, y_pred, k)
     for attr in [
-        "residuals", "sse", "sst", "rv", "rsq", "rsq_adj",
-        "log_likelihood", "aic", "aic_c", "bic"
+        "residuals",
+        "sse",
+        "sst",
+        "rv",
+        "rsq",
+        "rsq_adj",
+        "log_likelihood",
+        "aic",
+        "aic_c",
+        "bic",
     ]:
         assert hasattr(evaluator, attr), f"Missing attribute: {attr}"
 
@@ -64,7 +72,13 @@ def test_get_stats_keys(simple_data):
     stats = evaluator.get_stats()
 
     expected_keys = {
-        "rsq", "rsq_adj", "aic", "aic_c", "bic", "log_likelihood", "residual_variance"
+        "rsq",
+        "rsq_adj",
+        "aic",
+        "aic_c",
+        "bic",
+        "log_likelihood",
+        "residual_variance",
     }
     assert expected_keys.issubset(stats.keys())
 
