@@ -2,6 +2,8 @@
 
 Replication of the paper: "An evaluation of R<sup>2</sup>  as an inadequate measure for nonlinear models in pharmacological and biochemical research: a Monte Carlo approach"
 
+Spiess, A.-N., & Neumeyer, N. (2010). An evaluation of R<sup>2</sup> as an inadequate measure for nonlinear models in pharmacological and biochemical research: A Monte Carlo approach. BMC Pharmacology, 10, 6. https://doi.org/10.1186/1471-2210-10-6 
+
 ## Features
 
 * Simulate data using customizable nonlinear models.
