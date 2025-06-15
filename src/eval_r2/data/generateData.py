@@ -40,7 +40,9 @@ class ModelSimulator:
         self.model.model(x=self.x, **params, **kwargs)
 
         if not hasattr(self.model, "predictions") or self.model.predictions is None:
-            raise AttributeError("Model instance does not have 'predictions' attribute after calling model()")
+            raise AttributeError(
+                "Model instance does not have 'predictions' attribute after calling model()"
+            )
 
         self.true_values = self.model.predictions.copy()
 
