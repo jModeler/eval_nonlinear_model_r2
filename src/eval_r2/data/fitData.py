@@ -39,7 +39,7 @@ class ModelFitter:
             self._squared_error_loss,
             x0=x0,
             args=(param_names, x, y, *[], kwargs),
-            method='L-BFGS-B'  # Or 'Powell', 'Nelder-Mead' for non-smooth problems
+            method='L-BFGS-B'  # Maybe parameterize this to leverage 'Powell', 'Nelder-Mead' for non-smooth problems
         )
 
         self.result = result
