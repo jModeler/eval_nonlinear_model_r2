@@ -2,6 +2,7 @@ import numpy as np
 import pytest
 from eval_r2.models.weibull import WeibullModel
 
+
 @pytest.fixture
 def sample_data():
     # Sample inputs
@@ -11,12 +12,14 @@ def sample_data():
     x = np.array([1.0, 2.0, 3.0])
     return b, d, e, x
 
+
 def test_model_W3(sample_data):
     b, d, e, x = sample_data
     model = WeibullModel("test_W3")
     model.model(b=b, d=d, e=e, x=x, model_flag="W3")
     assert hasattr(model, "predictions")
     np.testing.assert_allclose(model.predictions, d * model.exponent)
+
 
 def test_model_W4(sample_data):
     b, d, e, x = sample_data
@@ -26,8 +29,11 @@ def test_model_W4(sample_data):
     expected = c + (d - c) * model.exponent
     np.testing.assert_allclose(model.predictions, expected)
 
+
 def test_invalid_model_name(sample_data):
     b, d, e, x = sample_data
     model = WeibullModel("test_invalid")
-    with pytest.raises(ValueError, match="Invalid model_flag. Please provide either 'W3' or 'W5'."):
+    with pytest.raises(
+        ValueError, match="Invalid model_flag. Please provide either 'W3' or 'W5'."
+    ):
         model.model(b=b, d=d, e=e, x=x, model_flag="invalid_model")

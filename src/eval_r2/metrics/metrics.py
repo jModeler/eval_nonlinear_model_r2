@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class ManualModelFitEvaluator:
     def __init__(self, y_true: np.ndarray, y_pred: np.ndarray, num_params: int):
         self.y_true = y_true
@@ -10,7 +11,7 @@ class ManualModelFitEvaluator:
 
     def _compute(self):
         self.residuals = self.y_true - self.y_pred
-        self.sse = np.sum(self.residuals ** 2)
+        self.sse = np.sum(self.residuals**2)
         self.sst = np.sum((self.y_true - np.mean(self.y_true)) ** 2)
         self.rv = self.sse / (self.n - self.k)
 
