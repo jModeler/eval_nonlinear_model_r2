@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.optimize import minimize
 
+
 class ModelFitter:
     def __init__(self, model_instance):
         """
@@ -20,7 +21,7 @@ class ModelFitter:
         except Exception as e:
             # Return large loss if model fails
             return np.inf
-        
+
         # Return squared error loss
         return np.sum((y_true - y_pred) ** 2)
 
@@ -39,7 +40,7 @@ class ModelFitter:
             self._squared_error_loss,
             x0=x0,
             args=(param_names, x, y, *[], kwargs),
-            method='L-BFGS-B'  # Maybe parameterize this to leverage 'Powell', 'Nelder-Mead' for non-smooth problems
+            method="L-BFGS-B",  # Maybe parameterize this to leverage 'Powell', 'Nelder-Mead' for non-smooth problems
         )
 
         self.result = result

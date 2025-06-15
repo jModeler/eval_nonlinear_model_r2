@@ -53,12 +53,16 @@ def test_no_predictions_after_model_call(loglogistic_model_and_data):
         pass  # Missing predictions attribute on purpose
 
     import types
+
     model.model = types.MethodType(bad_model, model)
 
     simulator = ModelSimulator(model, x)
     params = {"b": 1.0, "d": 2.0, "e": 0.5}
 
-    with pytest.raises(AttributeError, match="Model instance does not have 'predictions' attribute after calling model()"):
+    with pytest.raises(
+        AttributeError,
+        match="Model instance does not have 'predictions' attribute after calling model()",
+    ):
         simulator.simulate(params)
 
 
