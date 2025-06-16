@@ -45,7 +45,7 @@ def simulate_xgboost_data(x, noise_sds=[0.01, 0.02, 0.05, 0.1, 0.2, 0.4]):
     np.random.seed(42)
 
     # Step 1: Train model to generate 'true' signal
-    placeholder_y = np.sin(x) + 0.1 * x  # Arbitrary smooth function
+    placeholder_y = 0.4 * (np.sin(x) + 0.1 * x)  # Arbitrary smooth function, scaled
     dtrain = xgb.DMatrix(x.reshape(-1, 1), label=placeholder_y)
     true_params = {
         "objective": "reg:squarederror",
@@ -129,7 +129,7 @@ def main():
     variants = {
         "xgb_d3_eta01": {"objective": "reg:squarederror", "max_depth": 3, "eta": 0.1, "verbosity": 0},
         "xgb_d4_eta01": {"objective": "reg:squarederror", "max_depth": 4, "eta": 0.1, "verbosity": 0},
-        # "xgb_d3_eta05": {"objective": "reg:squarederror", "max_depth": 3, "eta": 0.5, "verbosity": 0},
+        #"xgb_d3_eta05": {"objective": "reg:squarederror", "max_depth": 3, "eta": 0.5, "verbosity": 0},
         "xgb_d2_eta01": {"objective": "reg:squarederror", "max_depth": 2, "eta": 0.1, "verbosity": 0},
         "xgb_d5_eta01": {"objective": "reg:squarederror", "max_depth": 5, "eta": 0.1, "verbosity": 0},
     }
