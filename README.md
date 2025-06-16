@@ -2,8 +2,6 @@
 
 Replication of the paper: "An evaluation of R<sup>2</sup>  as an inadequate measure for nonlinear models in pharmacological and biochemical research: a Monte Carlo approach"
 
-Spiess, A.-N., & Neumeyer, N. (2010). An evaluation of R<sup>2</sup> as an inadequate measure for nonlinear models in pharmacological and biochemical research: A Monte Carlo approach. BMC Pharmacology, 10, 6. https://doi.org/10.1186/1471-2210-10-6 
-
 ## Features
 
 * Simulate data using customizable nonlinear models.
@@ -202,4 +200,8 @@ That said:
 
 Feel free to open issues or submit pull requests for bug fixes, enhancements, or new model support.
 
+## References
+Spiess, A.-N., & Neumeyer, N. (2010). An evaluation of R<sup>2</sup> as an inadequate measure for nonlinear models in pharmacological and biochemical research: A Monte Carlo approach. BMC Pharmacology, 10, 6. https://doi.org/10.1186/1471-2210-10-6 
+
+Belkin, M., Hsu, D., Ma, S., & Mandal, S. (2019). Reconciling modern machine-learning practice and the classical bias–variance trade-off. Proceedings of the National Academy of Sciences of the United States of America, 116(32), 15849–15858. https://doi.org/10.1073/pnas.1903070116
 
