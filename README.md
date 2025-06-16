@@ -180,8 +180,8 @@ Noise SD = 0.400
 Note how all the metrics appear to suggest different models (across all error values), however, the information criteria (AIC, AICc, BIC) tend to select the correct model  `xgb_d3_eta01` at specific noise standard deviation values.
 
 That said:
-1. I've observed that increasing the learning rate (`eta` hyperparameter) results in all metrics favouring the xgboost models with a higher learning rate (i.e. models that overfit by "learning from the noise")
-2. In some cases, a higher tree depth is preferred, even though the true data were generated from a shallow tree
+1. I've observed that increasing the learning rate (`eta` hyperparameter) results in all metrics favouring the xgboost models with a higher learning rate (i.e. models that overfit by "learning from the noise").
+2. In some cases, a higher tree depth is preferred, even though the true data were generated from a shallow tree.
 3. Interested users could incorporate (1) cross-validation and (2) regularization hyperparameters to test whether the metrics favor the true model.
 4. This might have something to do with the findings that [overparameterized trees tend to fit data better](https://www.pnas.org/doi/10.1073/pnas.1903070116), and do not follow the traditional bias-variance trade off.
 5. I use a custom function to count the number of parameters in the xgboost tree. Since this is a parameter used in fit metric calculations, this could be a source of error too.
@@ -194,6 +194,7 @@ That said:
 * `src/eval_r2/data/` — Data simulation and fitting utilities.
 * `src/eval_r2/metrics/` — Model evaluation metrics.
 * `src/eval_r2/main.py` — Main script to run full pipeline.
+* `src/eval_r2/xgboost_fit.py` - Script to run xgboost model selection exercise.
 
 ---
 
