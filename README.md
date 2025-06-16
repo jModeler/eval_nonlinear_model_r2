@@ -191,7 +191,7 @@ That said:
 * `src/eval_r2/models/` — Model class implementations.
 * `src/eval_r2/data/` — Data simulation and fitting utilities.
 * `src/eval_r2/metrics/` — Model evaluation metrics.
-* `src/eval_r2/main.py` — Main script to run full pipeline.
+* `src/eval_r2/main.py` — Main script to run full pipeline (excludes xgboost models).
 * `src/eval_r2/xgboost_fit.py` - Script to run xgboost model selection exercise.
 
 ---
